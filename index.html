@@ -8,9 +8,12 @@
 </head>
 <body>
     <audio id="background-music" src="sound.mp3" autoplay loop></audio>
+    
+    <div id="hint-container" class="hidden"></div>
+    
     <div class="choose-path" id="choose-path">
-        <h1>Cual Prefieres?</h1>
-        <p>Esta vez piensalo bien 😉</p>
+        <h1>¿Cuál Prefieres?</h1>
+        <p>Esta vez piénsalo bien 😉</p>
         <div class="card" onclick="chooseCard(1)">
             <h2>1</h2>
         </div>
@@ -23,16 +26,12 @@
     <div class="login-background hidden" id="login-background">
         <div id="login-card" class="card">
             <div class="dragon-container">
-                <img src="path_to_dragon_image.jpg" alt="Dragón" class="dragon">
+                <!-- <img src="path_to_dragon_image.jpg" alt="" class="dragon"> -->
             </div>
             <h2>Contraseña</h2>
-            <p style=" font-size: smaller;" >Si no te la sabes no dudes en pasar para obtener una pista</p>
+            <p style=" font-size: smaller;">Si no te la sabes no dudes en pasar para obtener una pista</p>
             <input type="password" id="password" placeholder="adivina la contraseña">
             <button onclick="login()">Entrar</button>
-        </div>
-        <div id="hint-message" class="card hidden">
-            <p>¿Quieres una pista?</p>
-            <button onclick="showHint()">Sí</button>
         </div>
     </div>
 
@@ -45,11 +44,30 @@
     </div>
 
     <div id="birthday-card" class="card hidden">
-        <h2>Lo lograste!!</h2>
-        <p>Pasaste la Prueba asi que definitivamente si eres mi Besto</p>
-        <img src="path_to_image.jpg" alt="Foto de Cumpleaños">
-        <p>Texto de felicitación y celebración.</p>
+        <h2 style="color: #590bba;">¡Lo lograste!</h2>
+        <p>Pasaste la Prueba así que definitivamente eres mi Besto.</p>
+        <div class="birthday-text">
+            <br>
+            <p>Hoy es un día muy especial y no quería dejar pasar la oportunidad de recordarte cuánto significas para mí como mi besto. Sé que quizá no es muy innovador de mi parte una página web, pero está hecha con todo el cariño para ti.
+                <br><br>
+                A lo largo de estos 2 añitos y medio, hemos compartido tantas experiencias y momentos que han dejado un recuerdo imborrable en mi vida y memoria. Recuerdo con cariño las risas y las conversaciones profundas que hemos tenido, o los cahuines que hemos copuchado. Desde las noches en las que nos quedábamos hasta tarde hablando puras weas, hasta los pequeños momentos cotidianos que se convirtieron en grandes recuerdos para mí.
+                <br><br>
+                Me has enseñado tanto sobre la vida, la amistad y el cariño incondicional. Gracias a ti, he aprendido a ser más paciente, a ver el mundo con otros ojos y a valorar las cosas simples y hermosas de la vida. Aprendí a querer como Mikasa quería incondicionalmente a Eren. Aprendí a ser constante y perseverante como lo eras con tus galletitas del Cookie Clicker, a ser responsable como lo eres con la racha de Duolingo, a no vencerme por más destrozado que esté y seguir adelante, como cuando necesitaba nota para pasar el ramo de inglés. Aprendí que el ojo de bruja no se equivoca y a confiar en ti y en tu palabra. Y algo muy importante que aprendí es a quererte tal como eres, porque nadie es igual a ti, ni nadie lo será jamás.
+                <br><br>
+                Me hiciste entender que me gusta el anime y que SNK está casi al mismo nivel que Breaking Bad, que pase lo que pase siempre creerás tener la razón, a pesar de darte mil y una razones para demostrarte lo contrario, y que se vive y se muere por el cahuin.
+                <br><br>
+                Pero... Quiero aprovechar este día para disculparme también por todas las veces que fallé como besto. Sé que no siempre he estado a la altura y que he cometido errores que pudieron haberte lastimado. Lamento sinceramente cada uno de esos momentos y te agradezco por tu comprensión y tu capacidad para perdonar. Tu amistad es un regalo invaluable que no doy por sentado, y cada día intento ser mejor persona gracias a tu ejemplo.
+                <br><br>
+                Hoy, en tu cumpleaños, deseo que todos tus sueños se hagan realidad. Que la felicidad, la salud y el amor te acompañen siempre. Que sigas siendo esa persona maravillosa, hermosa, preciosa y llena de luz que eres. Gracias por ser tú y por haber estado siempre ahí cuando lo necesité, por ser la mejor conmigo y darme el cariño que no tenía en mi vida. Gracias por ser mi Besto. ¡Feliz cumpleaños a la besto voladita! Espero poder disfrutar mucho más tu amistad.
+                <br><br>
+                Con todo mi corazón, tu bby.
+            </p>
+        </div>
     </div>
+
+    <img src="images/3.jpg" alt="Imagen Lateral Izquierda" class="side-image side-image-left 1">
+
+    <img src="images/20.jpg" alt="Imagen Lateral Derecha" class="side-image side-image-right 5">
 
     <canvas id="confetti-canvas"></canvas>
     <script src="script.js"></script>

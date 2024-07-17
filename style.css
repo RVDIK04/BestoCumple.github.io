@@ -1,13 +1,12 @@
+/* Estilos generales */
 body {
-    background-color: white;
-    color: #6a0dad;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    font-size: 18px; /* Ajuste de tamaño de fuente global */
+    padding: 0;
+    background-color: pink;
+    color: #333;
+    overflow-x: hidden; /* Para evitar el desbordamiento horizontal */
+    position: relative; /* Para permitir el posicionamiento absoluto de las imágenes */
 }
 
 .choose-path {
@@ -40,19 +39,16 @@ body {
 }
 
 .card {
-    background-color: white;
-    border: 3px solid #6a0dad; /* Aumento del grosor del borde */
-    border-radius: 15px; /* Aumento del radio de borde */
-    padding: 30px; /* Aumento del espacio interno */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumento de la sombra */
-    transition: transform 0.3s ease;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px; /* Ancho máximo ajustado */
+    width: 80%; /* Ancho ajustable según el tamaño de la ventana */
+    margin: 20px auto;
     text-align: center;
+    font-size: 16px; /* Tamaño de la fuente ajustado */
     position: relative;
-    z-index: 1;
-    margin: 20px; /* Aumento del margen */
-    display: inline-block; /* Añadido para alinear los cards en línea */
-    width: 200px; /* Ancho opcional para los cards */
-    font-size: 24px; /* Ajuste de tamaño de fuente */
 }
 
 .dragon-container {
@@ -93,14 +89,14 @@ canvas {
     100% { transform: translateX(0); }
 }
 
-
 /* Ajustes para el birthday-card */
 #birthday-card {
     max-width: 80%;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    width: 600px; /* Ancho específico del card */
+    width: 1100px; /* Ancho específico del card */
+    height: auto;
 }
 
 #birthday-card h2 {
@@ -114,3 +110,89 @@ canvas {
 #birthday-card img {
     max-width: 100%; /* Ajustar tamaño máximo de la imagen */
 }
+
+.birthday-text {
+    font-size: 16px; /* Tamaño de fuente reducido */
+}
+
+/* Estilos del botón de Entrar y el placeholder */
+input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #6a0dad; /* Mismo color que el borde del card */
+    border-radius: 10px; /* Redondear el borde */
+    font-size: 18px;
+    width: calc(100% - 24px);
+}
+
+input[type="password"]::placeholder {
+    color: #6a0dad;
+    font-style: italic;
+}
+
+button {
+    background-color: #6a0dad; /* Mismo color que el borde del card */
+    color: white; /* Texto blanco */
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px; /* Borde redondeado */
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #590bba; /* Un poco más oscuro al pasar el mouse */
+}
+
+
+
+
+
+/* PISTAS*/
+
+#hint-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    max-width: 300px;
+    z-index: 2;
+    background-color: white;
+    border: 2px solid #6a0dad;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hint {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f3e5f5;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* fIN PISTAS*/
+
+
+/* Fotos*/
+.side-image {
+    position: fixed;
+    top: 50%;
+    width: 300px; /* Ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    transform: translateY(-50%); /* Centra verticalmente la imagen */
+    display: none; /* Oculta las imágenes inicialmente */
+    padding: 40px;
+}
+
+.side-image-left {
+    left: 0;
+}
+
+.side-image-right {
+    right: 0;
+}
+/* fIN Fotos*/

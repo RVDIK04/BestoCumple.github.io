@@ -33,7 +33,7 @@ function chooseCard(cardNumber) {
 
 function login() {
     const password = document.getElementById('password').value;
-    if (password === 'tu_contraseña') {
+    if (password === 'dracarys') {
         hideLoginElements();
         showBirthdayCard();
     } else {
@@ -49,8 +49,13 @@ function login() {
 function showHint(attempt) {
     const hintIndex = attempt - 1; // Ajustar al índice correcto del array hints
     const hintMessage = hints[hintIndex];
-    document.getElementById('hint-message').innerText = hintMessage;
-    document.getElementById('hint-message').classList.remove('hidden');
+
+    const hintContainer = document.getElementById('hint-container');
+    const hintElement = document.createElement('div');
+    hintElement.className = 'hint';
+    hintElement.innerText = hintMessage;
+    hintContainer.appendChild(hintElement);
+    hintContainer.classList.remove('hidden');
 }
 
 function handleLoginFailure() {
@@ -82,7 +87,6 @@ function submitAnswer() {
 
 function hideLoginElements() {
     document.getElementById('login-background').classList.add('hidden');
-    document.getElementById('hint-message').classList.add('hidden');
 }
 
 function hideQuestionElements() {
@@ -91,8 +95,33 @@ function hideQuestionElements() {
 
 function showBirthdayCard() {
     document.getElementById('birthday-card').classList.remove('hidden');
+    document.querySelector('.side-image-left').style.display = 'block';
+    document.querySelector('.side-image-right').style.display = 'block';
     startConfetti();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Confetii
 
 function startConfetti() {
     const confettiSettings = { target: 'confetti-canvas', max: 100, size: 1.2, animate: true };
@@ -100,7 +129,6 @@ function startConfetti() {
     confetti.render();
 }
 
-// Confetti.js - Biblioteca externa para manejar la animación de confeti
 class ConfettiGenerator {
     constructor(params) {
         this.canvas = document.getElementById(params.target);
@@ -155,3 +183,5 @@ class ConfettiGenerator {
         this.animateParticles();
     }
 }
+
+// FIN Confetii
