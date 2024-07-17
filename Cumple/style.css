@@ -1,0 +1,116 @@
+body {
+    background-color: white;
+    color: #6a0dad;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 18px; /* Ajuste de tamaño de fuente global */
+}
+
+.choose-path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.choose-path .card {
+    margin: 20px; /* Aumento del margen */
+    padding: 30px; /* Aumento del espacio interno */
+    background-color: white;
+    border: 3px solid #6a0dad; /* Aumento del grosor del borde */
+    border-radius: 15px; /* Aumento del radio de borde */
+    cursor: pointer;
+    display: inline-block; /* Añadido para alinear los cards en línea */
+    font-size: 24px; /* Ajuste de tamaño de fuente */
+}
+
+.login-background {
+    background-color: pink;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.card {
+    background-color: white;
+    border: 3px solid #6a0dad; /* Aumento del grosor del borde */
+    border-radius: 15px; /* Aumento del radio de borde */
+    padding: 30px; /* Aumento del espacio interno */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumento de la sombra */
+    transition: transform 0.3s ease;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 20px; /* Aumento del margen */
+    display: inline-block; /* Añadido para alinear los cards en línea */
+    width: 200px; /* Ancho opcional para los cards */
+    font-size: 24px; /* Ajuste de tamaño de fuente */
+}
+
+.dragon-container {
+    position: absolute;
+    top: -70px; /* Ajuste de posición */
+    left: -70px; /* Ajuste de posición */
+    width: 200px; /* Ajuste de tamaño */
+    height: 200px; /* Ajuste de tamaño */
+}
+
+.dragon {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-15px); }
+    50% { transform: translateX(15px); }
+    75% { transform: translateX(-15px); }
+    100% { transform: translateX(0); }
+}
+
+
+/* Ajustes para el birthday-card */
+#birthday-card {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 600px; /* Ancho específico del card */
+}
+
+#birthday-card h2 {
+    font-size: 2.5em; /* Ajustar tamaño del título */
+}
+
+#birthday-card p {
+    font-size: 1.2em; /* Ajustar tamaño del texto */
+}
+
+#birthday-card img {
+    max-width: 100%; /* Ajustar tamaño máximo de la imagen */
+}
