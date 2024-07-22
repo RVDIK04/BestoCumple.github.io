@@ -13,13 +13,58 @@ const questions = [
     { question: '¿Que numero de camiseta uso cuando juego al futbol? La numero...', answer: '2' },
     { question: '¿Cual es el nombre de la mejor amiga en el mundo mundial?', answer: 'mackarena' },
     { question: 'Para verificar que no eres un inpostor y si mi besto ¿Que edad tiene mi besto?', answer: '20' },
-    { question: 'Y por utlimo ¿Quien es mi tio?', answer: 'jordan23' },
+    { question: 'Y por ultimo ¿Quien es mi tio?', answer: 'jordan23' },
 ];
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const music = document.getElementById('background-music');
-    music.volume = 0.2;  // Establecer volumen al 20%
+    music.volume = 0.05;  // mmusica 5%
 });
+
+const leftImages = [
+    { src: 'images/1.jpg', description: 'Gracias acompañarme y aguantarme tantas horas ❤️' },
+    { src: 'images/3.jpg', description: 'Gracias por dejarte carrear en el valo y a veces, solo a veces carrearme tu' },
+    { src: 'images/5.jpg', description: 'Gracias por acompañarme a hacerme mi primer tatuaje 🥹' },
+    { src: 'images/7.jpg', description: 'Asomada' },
+    { src: 'images/9.jpg', description: 'Asomada X2' },
+    { src: 'images/11.jpg', description: 'Cuando jugabamos phasmo y eras mas gritona que nadie y no querias entrar sola a la casa' },
+    { src: 'images/13.jpg', description: 'Vendida X2' },
+    { src: 'images/15.jpg', description: 'Muchas gracias por el regalo de navidad que me amarre las manos para no abrirlo antes' },
+    { src: 'images/17.jpg', description: 'Volada y abrigadita' },
+    { src: 'images/19.jpg', description: 'Cuando me acompañaste a la cancha y andaba resfriado y hacia cualquier frio y fuiste igual por mi. La mejor' },
+    { src: 'images/21.jpg', description: 'Cagandote de la risa de mi' },
+    // Agrega más imágenes y descripciones aquí
+];
+
+const rightImages = [
+    { src: 'images/2.jpg', description: '2 Estrellas en la misma foto? 🌟' },
+    { src: 'images/4.jpg', description: 'Recuerdo de las hijas de perra 🐕‍🦺' },
+    { src: 'images/6.jpg', description: 'Tenia muchas vendidas tuyas asi que era necesario agregarlas tkm' },
+    { src: 'images/8.jpg', description: 'Tus "No te enojes" son la mejor wea para no enojarse ❤️' },
+    { src: 'images/10.jpg', description: 'The Most Important Very Very hablarle a tu besto, te extraña' },
+    { src: 'images/12.jpg', description: 'Recien conociendonos aun que me teniai mala por que era (soy) pesado' },
+    { src: 'images/14.jpg', description: 'Cuando viciabas cookie clicker y me dejaste una nota porque te dio sueño con la hora a la que despertarias' },
+    { src: 'images/16.jpg', description: 'Cuando me hiciste un facetime no recuerdo para que y te saque una vendida' },
+    { src: 'images/18.gif', description: 'Evidencia grafica del pancho haciendo algo con mas gente y fuera de la casa' },
+    { src: 'images/20.jpg', description: 'Cuando hicimos el tarreo que yo no queria aceptar hasta esa vez 🥹' },
+    { src: 'images/22.jpg', description: 'No te enojes X45' },
+    // Agrega más imágenes y descripciones aquí
+];
+
+function startCarousel(selector, images) {
+    let currentIndex = 0;
+    const container = document.querySelector(selector);
+    const imageElement = container.querySelector('.carousel-image');
+    const descriptionElement = container.querySelector('.description');
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        imageElement.src = images[currentIndex].src;
+        descriptionElement.textContent = images[currentIndex].description;
+    }
+
+    setInterval(showNextImage, 10000); // Cambiar cada 5 segundos
+}
 
 function chooseCard(cardNumber) {
     document.getElementById('choose-path').classList.add('hidden');
@@ -98,30 +143,9 @@ function showBirthdayCard() {
     document.querySelector('.side-image-left').style.display = 'block';
     document.querySelector('.side-image-right').style.display = 'block';
     startConfetti();
+    startCarousel('.side-image-left', leftImages);
+    startCarousel('.side-image-right', rightImages);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  Confetii
 
 function startConfetti() {
     const confettiSettings = { target: 'confetti-canvas', max: 100, size: 1.2, animate: true };
@@ -183,5 +207,3 @@ class ConfettiGenerator {
         this.animateParticles();
     }
 }
-
-// FIN Confetii

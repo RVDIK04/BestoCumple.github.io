@@ -97,6 +97,7 @@ canvas {
     text-align: center;
     width: 1100px; /* Ancho específico del card */
     height: auto;
+    margin-top: 20px;
 }
 
 #birthday-card h2 {
@@ -177,15 +178,20 @@ button:hover {
 /* fIN PISTAS*/
 
 
-/* Fotos*/
-.side-image {
-    position: fixed;
-    top: 50%;
-    width: 300px; /* Ancho de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    transform: translateY(-50%); /* Centra verticalmente la imagen */
-    display: none; /* Oculta las imágenes inicialmente */
-    padding: 40px;
+
+/* carrusel */
+.carousel-container {
+    width: 300px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    display: none; /* Ocultar por defecto */
+    padding: 30px;
+    padding-top: 170px;
 }
 
 .side-image-left {
@@ -195,4 +201,27 @@ button:hover {
 .side-image-right {
     right: 0;
 }
-/* fIN Fotos*/
+
+.carousel {
+    text-align: center;
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.description {
+    color: #590bba;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Mostrar las imágenes del carrusel solo cuando la tarjeta de cumpleaños esté visible */
+#birthday-card.show ~ .carousel-container {
+    display: block;
+}
+
+/* fin  carrusel */
